@@ -100,12 +100,13 @@ for i in range(1, n_trabajadores + 1):
                 trabajadores[i - 1]["disponibilidad_de_horas"] -= turno["duracion_del_turno"]
 
 # Resultado óptimo
-maximo_numero_de_turnos_cubiertos = conteo_trabajadores_vs_turno[n_trabajadores, n_turnos]
+ponderacion_maximo_numero_de_turnos_cubiertos = conteo_trabajadores_vs_turno[n_trabajadores, n_turnos]
 asignaciones_trabajadores_vs_turno_optimas = asignaciones_trabajadores_vs_turno[n_trabajadores, n_turnos]
 
 
 
-print(f"Ponderación de cantidad de turnos cubiertos: {maximo_numero_de_turnos_cubiertos}")
+print(f"Ponderación de máxima cantidad de turnos cubiertos según prioridad: {ponderacion_maximo_numero_de_turnos_cubiertos}")
+print("'prioridad': 'Alta' -- valor por 3, 'prioridad': 'Media' -- valor por 2, 'prioridad': 'baja' -- valor por 1")
 print(f"Maxima cantidad de turnos cubiertos: {len(asignaciones_trabajadores_vs_turno_optimas.strip(" | ").split(" | "))}")
 print("asignaciones óptimas:")
 for asignacion in asignaciones_trabajadores_vs_turno_optimas.strip(" | ").split(" | "):
